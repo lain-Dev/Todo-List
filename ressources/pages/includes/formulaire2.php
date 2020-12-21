@@ -13,6 +13,7 @@
 <!--Vérifie si un champs en vide avant lancer la vérifications des valeurs-->
 <?php 
        
+       
        @$prenom=$_POST["prenomUser"];
        @$login=$_POST["emailUser"];
        @$pass=$_POST["passwordUser"];
@@ -26,7 +27,7 @@
           elseif(empty($pass)) $erreur='<div class="alert alert-danger">Mot de passe laissé vide!</div>';
           elseif(empty($repass)) $erreur='<div class="alert alert-danger">Veuillez confirmer le mot de passe saisie!</div>';
           else{
-            include("../../controllers/inscription.php"); 
+            Include dirname(dirname(__DIR__)).'/controllers/inscription.php';
           }
         }    
         ?>
@@ -38,7 +39,8 @@
             }
        ?>
 
-        <form>
+
+        <form method="POST"> 
 
           <div>
           <label for="prenom" class="form-label">Prénoms*</label>
@@ -67,7 +69,7 @@
                     </div>
 
           <div>
-            <input type="submit" value="inscription" name="signUp"/>
+          <button type="submit" class="btn btn-primary mr-5" name="signUp" formmethod="post">M'inscrire</button>
           </div>
 
           <p>

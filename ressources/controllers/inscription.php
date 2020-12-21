@@ -3,13 +3,15 @@
     //envoi données vers json
     //condition clic input signUp
    /* if (isset($_POST['signUp'])) {*/
+    
 
+    
         //générateur aléatoire id pour la card créer
         $idUser = md5(uniqid(rand(), true)); //On attribue un id unique à l'image via la fonction md5 uniqid et random
         $_POST['id'] = $idUser;
         //variable pour le mailUser
         $emailUser = $_POST['emailUser'];
-        $_POST['activité'] = [];
+        $_POST['list'] = [];
         $repass = $_POST['repass'];
         $password = $_POST['passwordUser'];
         $verifiaction = true;
@@ -41,9 +43,6 @@
                     //séciser champs input et mettre en minuscule email
                     $_POST['emailUser'] = strtolower($_POST['emailUser']);
                     $_POST['emailUser'] = htmlentities($_POST['emailUser'], ENT_QUOTES);
-                    $_POST['telUser'] = htmlentities($_POST['telUser'], ENT_QUOTES);
-
-                    
                     
                     
                     //condition si mot passe identique dans les champs inputs
