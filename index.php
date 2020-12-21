@@ -1,1 +1,1 @@
-<?php header('Location: ./ressources/pages/home.php?page=1');?>
+<?php header('Location: ./ressources/pages/home.php');?>
