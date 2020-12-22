@@ -2,8 +2,9 @@
     {
         "prenomUser": "Olivier",
         "emailUser": "olivier@lebon.dev",
-        "passwordUser": "$2y$10$p2MZRkM0ePqS16Y00sCoT.0To.m10DwY4xMp5OreCoEw\/IkqQZyXK",
-        "id": "7db8ffe48b92aac8c190c7984b291ce5",
-        "list": []
+        "passwordUser": "$2y$10$UeSTvaBNgFHmkonFJR2dEeSscos9ID9snjiddyWljsXtREn\/Wa12q",
+        "id": "80777bfbc7ccddbaf6ee7ba22fe62e80",
+        "list": [],
+        "role": "user"
     }
 ]

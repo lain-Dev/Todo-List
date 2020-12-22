@@ -14,6 +14,7 @@
         $_POST['list'] = [];
         $repass = $_POST['repass'];
         $password = $_POST['passwordUser'];
+        $_POST['role'] = "user";
         $verifiaction = true;
         
         //condition pour vérifier format email valide
