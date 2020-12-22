@@ -1,5 +1,5 @@
 <!-- Site footer -->
-<footer class="site-footer">
+<footer class="site-footer" style="height: auto;">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">

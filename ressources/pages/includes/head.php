@@ -38,7 +38,7 @@
                     </div>
                     <div>
                         <a href="../controllers/logout.php"
-                            class="text-white effect-underline font-weight-bold btn btn-primary" role="button">
+                            class="text-white effect-underline font-weight-bold btn bg-success" role="button">
                             Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></a>
                     </div>
 
