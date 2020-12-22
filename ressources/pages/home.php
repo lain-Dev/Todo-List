@@ -1,7 +1,36 @@
 <?php
+//définir le chemin root
+define('__ROOT__', dirname(dirname(__DIR__))); 
 
 // On lance la session
 session_start();
+
+//On vérifie si l'admin est connecte
+if(!isset($_SESSION['adminLoggedIn'])){
+  $_SESSION['adminLoggedIn'] = false;
+}
+
+//On verifie si un utilisateur est connecte
+if(!isset($_SESSION['particulierLoggedIn'])){
+  $_SESSION['particulierLoggedIn'] = false;
+}
+if(!isset($_SESSION['id'])){
+  $_SESSION['id'] = "";
+}
+if(!isset($_SESSION['list'])){
+  $_SESSION['list'] = [];
+}
+
+//Fonctions liés à la gestion des données en json
+function getUserData()
+{
+    $data = json_decode(file_get_contents(__ROOT__.'/data/users.json'), true);
+    if($data){
+        return $data;
+    }else{
+        return null;
+    }
+}
 
 ?>
 
