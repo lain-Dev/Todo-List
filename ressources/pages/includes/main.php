@@ -27,7 +27,7 @@
 
                     <div class="modal-body">
 
-                        <!--Vérifie si un champs en vide avant lancer la vérifications des valeurs-->
+                       
                         <?php 
                             Include dirname(dirname(__DIR__)).'/controllers/ajoutTache.php';
                         ?>
