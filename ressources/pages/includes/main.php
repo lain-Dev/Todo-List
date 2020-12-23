@@ -1,57 +1,67 @@
 <!--Début Todo List-->
 <div class="container mt-5">
 
-    <!-- Button trigger modal -->
-    <div class="d-flex justify-content-center">
-        <button type="button" class="btn bg-warning mb-3" data-toggle="modal" data-target="#exampleModal">
-            Entrer une tâche !
-        </button>
-    </div>
+     <!--Bouton utilisateur-->
+     <?php if($_SESSION['particulierLoggedIn'] == true):?>
+    
+        <!-- Button trigger modal -->
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn bg-warning mb-3" data-toggle="modal" data-target="#exampleModal">
+                Entrer une tâche !
+            </button>
+        </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Entrer votre Tâche à faire !</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Entrer votre Tâche à faire !</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    
+                        <form action="POST">
 
-                        <!--choix Jour-->
-                        <div class="mb-3">
-                            <select class="form-control" id="star">
-                                <option selected>select</option>
-                                <option value="lundi">lundi</option>
-                                <option value="mardi">mardi</option>
-                                <option value="mercredi">mercredi</option>
-                                <option value="jeudi">jeudi</option>
-                                <option value="vendredi">vendredi</option>
-                                <option value="samedi">samedi</option>
-                                <option value="dimanche">dimanche</option>
-                            </select>
-                        </div>
+                            <!--choix Jour-->
+                            <div class="mb-3">
+                            <label for="titre">selectionner le jour:</label>
+                                <select class="form-control" id="star" name="jour">
+                                    <option selected>select</option>
+                                    <option value="lundi">lundi</option>
+                                    <option value="mardi">mardi</option>
+                                    <option value="mercredi">mercredi</option>
+                                    <option value="jeudi">jeudi</option>
+                                    <option value="vendredi">vendredi</option>
+                                    <option value="samedi">samedi</option>
+                                    <option value="dimanche">dimanche</option>
+                                </select>
+                            </div>
 
-                        <!--texte texte a entrer-->
-                        <div>
-                            <input type="text" class="form-control" placeholder="entrer tâche" id="myInput">
-                        </div>
+                            <!--texte texte a entrer-->
+                            <div>
+                                <label for="titre">Entrer la tache :</label>
+                                <input type="text" class="form-control" placeholder="écrire la tache ici..." name="tache">
+                            </div>
 
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary" type="submit">Sauvegarder</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-primary" type="submit" name="ajouter">Ajouter</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--Fin modal-->
+        <!--Fin modal-->
+                    
+    <?php endif ?>
+
+    
 
     <div class="row row-cols-1 row-cols-md-2">
 
