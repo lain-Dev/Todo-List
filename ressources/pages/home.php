@@ -17,9 +17,7 @@ if(!isset($_SESSION['particulierLoggedIn'])){
 if(!isset($_SESSION['id'])){
   $_SESSION['id'] = "";
 }
-if(!isset($_SESSION['list'])){
-  $_SESSION['list'] = [];
-}
+
 
 
 
