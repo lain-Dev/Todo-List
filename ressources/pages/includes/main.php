@@ -4,7 +4,7 @@
      <!--Bouton utilisateur-->
      <?php if($_SESSION['particulierLoggedIn'] == true):?>
 
-
+        
         <!-- Button trigger modal -->
         <div class="d-flex justify-content-center">
             <button type="button" class="btn bg-warning mb-3" data-toggle="modal" data-target="#exampleModal">
@@ -28,16 +28,36 @@
                     <div class="modal-body">
 
                        
-                        <?php 
+                    <?php 
+
+                        @$jour=$_POST["jour"];
+                        @$tache=$_POST["tache"];
+
+                        @$erreur="";
+                        if(isset($valider)){
+
+                        if(empty($jour)) $erreur='<div class="alert alert-danger">selectionner un jour!</div>';
+                        elseif(empty($tache)) $erreur='<div class="alert alert-danger">entrer une tache!</div>';
+                        else{
                             Include dirname(dirname(__DIR__)).'/controllers/ajoutTache.php';
+                        }
+                        }    
+                        ?>
+
+                        <!--Début Formulaire inscription-->
+                        <?php
+                            if(isset($erreur)){
+                                echo $erreur;
+                            }
+                            
                         ?>
                     
-                        <form>
+                        <form method="POST">
 
                             <!--choix Jour-->
                             <div class="mb-3">
                             <label for="titre">selectionner le jour:</label>
-                            <select class="form-control" id="star" name="jour">
+                            <select class="form-control" name="jour">
                                 <option selected>select</option>
                                 <option value="lundi">lundi</option>
                                 <option value="mardi">mardi</option>
@@ -52,14 +72,20 @@
                             <!--texte texte a entrer-->
                             <div>
                                 <label for="titre">Entrer la tache :</label>
-                                <input type="text" class="form-control" placeholder="écrire la tache ici..." name="tache">
+                                <input type="text" class="form-control" placeholder="écrire la tache ici..." name="tache"
+                                value="<?php if(isset($_POST['tache'])){
+                            echo $_POST['tache'];
+                        }?>">
                             </div>
 
                         
                             </div>
                                 <div class="modal-footer">
                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                    <button class="btn btn-primary" type="submit" name="ajouter">Ajouter</button>
+
+                                    <button type="submit" class="btn btn-primary" name="envoyer" formmethod="post">envoyer</button>
+
+                          
                                 </div>
                             </div>
 

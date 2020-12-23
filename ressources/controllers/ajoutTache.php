@@ -7,9 +7,9 @@ $idTache = md5(uniqid(rand(), true)); //On attribue un id unique à luser
 $_POST['id'] = $idTache;
 $_POST['idUser'] = $_SESSION['id'];
 
+$_POST['jour'] = htmlentities($_POST['jour'], ENT_QUOTES);
+$_POST['tache'] = htmlentities($_POST['tache'], ENT_QUOTES);
 
-
-$verificationTache = true;
 
 //attribution destination json dans variable
 $filename = '../../data/todoList.json';
