@@ -1,5 +1,7 @@
 <?php
 
+if (isset($_POST['ajouter'])) {
+
 
 
 //générateur aléatoire id pour la card créer
@@ -23,18 +25,19 @@ $jsonArray = json_decode($jsonString, true);
 //condition pour envoyer les data dans le fichier user.json
 if (isset($filename)) {
     //fichier existe alors on récupère son contenu on transforme en array
-
-    //$jsonArray = []; // si pas de tableau on crée un tableau
-    array_unshift($jsonArray,$_POST);
+    array_push($jsonArray,$_POST);
     //en rencode le fichier en json aprés avoir reçu données
     file_put_contents($filename,json_encode($jsonArray));
     //message confirmation
     echo '<div class="col-md-12 d-flex justify-content-center">
             <div class="alert alert-success">Tache OK !</div>
         </div>';//message validatiion
+    exit();
 }else {
     
     echo '<div class="col-md-12 d-flex justify-content-center">
     <div class="alert alert-danger">Erreur tache Invalide !</div></div>';//message erreur saisie
+    exit();
+}
 
 }

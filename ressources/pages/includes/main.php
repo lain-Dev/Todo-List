@@ -30,25 +30,25 @@
                        
                     <?php 
 
-                        @$jour=$_POST["jour"];
-                        @$tache=$_POST["tache"];
+                                @$jour=$_POST["jour"];
+                                @$tache=$_POST["tache"];
 
-                        @$erreur="";
-                        if(isset($valider)){
+                                @$erreur="";
+                                if(isset($valider)){
 
-                        if(empty($jour)) $erreur='<div class="alert alert-danger">selectionner un jour!</div>';
-                        elseif(empty($tache)) $erreur='<div class="alert alert-danger">entrer une tache!</div>';
-                        else{
-                            Include dirname(dirname(__DIR__)).'/controllers/ajoutTache.php';
-                        }
-                        }    
-                        ?>
+                                if(empty($jour)) $erreur='<div class="alert alert-danger">selectionner un jour!</div>';
+                                elseif(empty($tache)) $erreur='<div class="alert alert-danger">entrer une tache!</div>';
+                                else{
+                                    Include dirname(dirname(__DIR__)).'/controllers/ajoutTache.php';
+                                }
+                                }    
+                                ?>
 
-                        <!--Début Formulaire inscription-->
-                        <?php
-                            if(isset($erreur)){
-                                echo $erreur;
-                            }
+                                <!--Début Formulaire inscription-->
+                                <?php
+                                    if(isset($erreur)){
+                                        echo $erreur;
+                                    }
                             
                         ?>
                     
@@ -83,7 +83,7 @@
                                 <div class="modal-footer">
                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
 
-                                    <button type="submit" class="btn btn-primary" name="envoyer" formmethod="post">envoyer</button>
+                                    <button type="submit" class="btn btn-primary" name="ajouer" formmethod="post">Ajouter</button>
 
                           
                                 </div>
