@@ -7,7 +7,7 @@
 
     
         //générateur aléatoire id pour la card créer
-        $idUser = md5(uniqid(rand(), true)); //On attribue un id unique à l'image via la fonction md5 uniqid et random
+        $idUser = md5(uniqid(rand(), true)); //On attribue un id unique à user
         $_POST['id'] = $idUser;
         //variable pour le mailUser
         $emailUser = $_POST['emailUser'];

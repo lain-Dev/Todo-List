@@ -21,8 +21,7 @@ if(!isset($_SESSION['list'])){
   $_SESSION['list'] = [];
 }
 
-//j'appel conrollers ajout tâche
-require_once(__ROOT__.'/ressources/controllers/ajoutTache.php');
+
 
 //Fonctions liés à la gestion des données en json
 function getUserData()
