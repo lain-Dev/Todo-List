@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="container" style="padding: 0px;">
-    <div class="col-left">
+    <div class="col-left font-weight-bold">
       <div class="login-text">
         <h2>Créer un compte</h2>
         <p>C'est totalement GRATUIT.</p>

@@ -1,7 +1,7 @@
 <!--Navbar-->
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="home.php">TodoList</a>
+        <a class="navbar-brand text-warning" href="home.php">TodoList</a>
         <form class="d-flex">
           <!--
             <input type="button" onclick="window.location.href = 'login.php';" value="LOGIN" class="btn btn-primary"/>  
@@ -13,7 +13,7 @@
                 <div class="d-flex flex-column justify-content-center align-items-center ml-5">
                     <div>
                         <a href="login.php"
-                            class="text-white effect-underline font-weight-bold btn btn-primary" role="button">
+                            class="text-white effect-underline font-weight-bold btn btn-warning " role="button">
                             Se connecter <i class="fa fa-sign-out" aria-hidden="true"></i>
                         </a>
                     </div>

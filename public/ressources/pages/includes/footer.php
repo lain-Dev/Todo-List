@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
+            <h6 class="text-warning">About</h6>
             <p class="text-justify">
               Reproduction du projet <i>Todo List</i> pour monter en compétences
               et utiliser de nouvelles technos apprises tout le long de la
