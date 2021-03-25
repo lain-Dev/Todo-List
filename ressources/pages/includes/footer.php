@@ -11,7 +11,7 @@
             </p>
           </div>
 
-          <div class="col-xs-6 col-md-3">
+          <!-- <div class="col-xs-6 col-md-3">
             <h6>Categories</h6>
             <ul class="footer-links">
               <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
@@ -32,16 +32,16 @@
           </div>
         </div>
         <hr />
-      </div>
+      </div> -->
 
-      <div class="container">
+      <!-- <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
             <p class="copyright-text">
               Copyright &copy; 2020 All Rights Reserved by
               <a href="#">Lain</a>.
             </p>
-          </div>
+          </div> -->
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">

@@ -18,24 +18,10 @@ if(!isset($_SESSION['id'])){
   $_SESSION['id'] = "";
 }
 
-
-
-
-//Fonctions liés à la gestion des données en json
-function getUserData()
-{
-    $data = json_decode(file_get_contents(__ROOT__.'/data/users.json'), true);
-    if($data){
-        return $data;
-    }else{
-        return null;
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
