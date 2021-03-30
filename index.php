@@ -1,1 +1,1 @@
-<?php header('Location: ./view/home.php');?>
+<?php header('Location: ./vue/home.php');?>
