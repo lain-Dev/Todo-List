@@ -1,118 +1,124 @@
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-sm-6 my-2">
-            <div class="card">
-                <div class="card-body" style="background-color: #2125296e;">
-                    <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 my-2">
-            <div class="card">
-                <div class="card-body" style="background-color: #2125296e;">
-                <form class="needs-validation" novalidate>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom01">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom02">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationCustomUsername">Username</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroupPrepend">@</span>
-        </div>
-        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-          Please choose a username.
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom03">City</label>
-      <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
-      <div class="invalid-feedback">
-        Please provide a valid city.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationCustom04">State</label>
-      <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
-      <div class="invalid-feedback">
-        Please provide a valid state.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationCustom05">Zip</label>
-      <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
-      <div class="invalid-feedback">
-        Please provide a valid zip.
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      <label class="form-check-label" for="invalidCheck">
-        Agree to terms and conditions
-      </label>
-      <div class="invalid-feedback">
-        You must agree before submitting.
-      </div>
-    </div>
-  </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
-</form>
+<style>
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #ffc107;
+  background-color: #343a40;
+}
+a {
+  color: #343a40;
+  font-weight: bold;
+}
+</style>
 
-<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-</script>
-                </div>
+<div class="container mt-5 mb-4">
+  <div class="col-sm-8 ml-auto mr-auto">
+
+    <!--lien selecdtion formulaire: -->
+    <ul class="nav nav-pills nav-fill mb-1" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-signin-tab" data-toggle="pill" href="#pills-signin" role="tab" aria-controls="pills-signin" aria-selected="true">Se connecter :</a>
+      </li>
+      <li class="nav-item"> 
+        <a class="nav-link" id="pills-signup-tab" data-toggle="pill" href="#pills-signup" role="tab" aria-controls="pills-signup" aria-selected="false">S'inscrire :</a> 
+      </li>
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+
+      <div class="tab-pane fade show active" id="pills-signin" role="tabpanel" aria-labelledby="pills-signin-tab">
+        <div class="col-sm-12 border border-secondary shadow rounded pt-2">
+
+          <div class="text-center"><img src="https://www.flaticon.com/svg/vstatic/svg/1077/1077012.svg?token=exp=1617172312~hmac=9971d189e859e2338e0273290ca4aabe" class="rounded-circle border p-1" style="height: 80px; width: 80px;"></div>
+          
+
+          <!--page login: -->
+          <form method="post" id="singninFrom">
+            <div class="form-group">
+              <label class="font-weight-bold">Email : <span class="text-danger">*</span></label>
+              <input type="email" name="email" id="email" class="form-control" placeholder="Entrer email connexion" required>
             </div>
+            <div class="form-group">
+              <label class="font-weight-bold">Mot Passe : <span class="text-danger">*</span></label>
+              <input type="password" name="password" id="password" class="form-control" placeholder="***********" required>
+            </div>
+            <!-- <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label><input type="checkbox" name="condition" id="condition"> Souvenir de moi.</label>
+                </div>
+                <div class="col text-right"> <a href="javascript:;" data-toggle="modal" data-target="#forgotPass">Forgot Password?</a> </div>
+              </div>
+            </div> -->
+            <div class="form-group">
+              <input type="submit" name="submit" value="Sign In" class="btn btn-block btn-dark text-warning">
+            </div>
+          </form>
         </div>
+      </div>
+
+
+      <div class="tab-pane fade" id="pills-signup" role="tabpanel" aria-labelledby="pills-signup-tab">
+        <div class="col-sm-12 border border-secondary shadow rounded pt-2">
+
+          <div class="text-center"><img src="https://www.flaticon.com/svg/vstatic/svg/197/197717.svg?token=exp=1617172435~hmac=3305dc5a2514c26e63842b165e52b2f1" class="rounded-circle border p-1" style="height: 80px; width: 80px;"></div>
+
+          <!--page inscription-->
+          <form method="post" id="singnupFrom">
+            <div class="form-group">
+              <label class="font-weight-bold">Email <span class="text-danger">*</span></label>
+              <input type="email" name="signupemail" id="signupemail" class="form-control" placeholder="Entrer email valide" required>
+            </div>
+            <div class="form-group">
+              <label class="font-weight-bold">Nom <span class="text-danger">*</span></label>
+              <input type="text" name="signupusername" id="signupusername" class="form-control" placeholder="Choisissez nom utilisateur" required>
+              <div class="text-danger"><em>Ce sera votre nom de connexion!</em></div>
+            </div>
+            <!-- <div class="form-group">
+              <label class="font-weight-bold">Phone #</label>
+              <input type="text" name="signupphone" id="signupphone" class="form-control" placeholder="(000)-(0000000)">
+            </div> -->
+            <div class="form-group">
+              <label class="font-weight-bold">Mot de passe: <span class="text-danger">*</span></label>
+              <input type="password" name="signuppassword" id="signuppassword" class="form-control" placeholder="***********" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
+            </div>
+            <div class="form-group">
+              <label class="font-weight-bold">Confirmer mot passe: <span class="text-danger">*</span></label>
+              <input type="password" name="signupcpassword" id="signupcpassword" class="form-control" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="***********" required>
+            </div>
+            <!-- <div class="form-group">
+              <label><input type="checkbox" name="signupcondition" id="signupcondition" required> I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</label>
+            </div> -->
+            <div class="form-group">
+              <input type="submit" name="signupsubmit" value="Sign Up" class="btn btn-block btn-dark text-warning">
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="forgotPass" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <form method="post" id="forgotpassForm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Forgot Password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Email <span class="text-danger">*</span></label>
+              <input type="email" name="forgotemail" id="forgotemail" class="form-control" placeholder="Enter your valid email..." required>
+            </div>
+            <div class="form-group">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sign In</button>
+            <button type="submit" name="forgotPass" class="btn btn-primary"><i class="fa fa-envelope"></i> Send Request</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
