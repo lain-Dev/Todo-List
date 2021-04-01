@@ -49,7 +49,7 @@ a {
               </div>
             </div> -->
             <div class="form-group">
-              <input type="submit" name="submit" value="Sign In" class="btn btn-block btn-dark text-warning">
+              <input type="submit" name="login" value="Entrer" class="btn btn-block btn-dark text-warning">
             </div>
           </form>
         </div>
@@ -62,14 +62,24 @@ a {
           <div class="text-center"><img src="https://www.flaticon.com/svg/vstatic/svg/197/197717.svg?token=exp=1617172435~hmac=3305dc5a2514c26e63842b165e52b2f1" class="rounded-circle border p-1" style="height: 80px; width: 80px;"></div>
 
           <!--page inscription-->
-          <form method="post" id="singnupFrom">
+          <?php include '../controller/inscription.php'; ?>
+
+          <form method="post" id="singnupFrom" action="../controller/inscription.php">
+
+            <div class="<?=  $_SESSION['class'] ?> alert  alert-dismissible fade show col-6 mx-auto mb-5 text-center fw-bold shadow" role="alert">
+              <span><?=  $_SESSION['message'] ?></span>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
             <div class="form-group">
               <label class="font-weight-bold">Email <span class="text-danger">*</span></label>
-              <input type="email" name="signupemail" id="signupemail" class="form-control" placeholder="Entrer email valide" required>
+              <input type="email" name="email" id="emil" class="form-control" placeholder="Entrer email valide" required>
+              <span class="<?= $class_alert ?>"><?= $Email_Err ?></span>
             </div>
             <div class="form-group">
               <label class="font-weight-bold">Nom <span class="text-danger">*</span></label>
-              <input type="text" name="signupusername" id="signupusername" class="form-control" placeholder="Choisissez nom utilisateur" required>
+              <input type="text" name="nom" id="nom" class="form-control" placeholder="Choisissez nom utilisateur" required>
+              <span class="<?= $class_alert ?>"><?= $Nom_Err ?></span>
               <div class="text-danger"><em>Ce sera votre nom de connexion!</em></div>
             </div>
             <!-- <div class="form-group">
@@ -78,17 +88,19 @@ a {
             </div> -->
             <div class="form-group">
               <label class="font-weight-bold">Mot de passe: <span class="text-danger">*</span></label>
-              <input type="password" name="signuppassword" id="signuppassword" class="form-control" placeholder="***********" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
+              <input type="password" name="passwordSignup" id="passwordSignup" class="form-control" placeholder="***********" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimum 6 charactères pour mot passe !' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
+              <span class="<?= $class_alert ?>"><?= $Password_Err ?></span>
             </div>
             <div class="form-group">
               <label class="font-weight-bold">Confirmer mot passe: <span class="text-danger">*</span></label>
-              <input type="password" name="signupcpassword" id="signupcpassword" class="form-control" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="***********" required>
+              <input type="password" name="password2" id="password2" class="form-control" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? ' Entrer le même mot passe précédent' : '');" placeholder="***********" required>
+              <span class="<?= $class_alert ?>"><?= $Confirmation_Pass_Err ?></span>
             </div>
             <!-- <div class="form-group">
               <label><input type="checkbox" name="signupcondition" id="signupcondition" required> I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</label>
             </div> -->
             <div class="form-group">
-              <input type="submit" name="signupsubmit" value="Sign Up" class="btn btn-block btn-dark text-warning">
+              <input type="submit" name="signup" value="signer" class="btn btn-block btn-dark text-warning">
             </div>
           </form>
         </div>
