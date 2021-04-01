@@ -32,6 +32,12 @@ a {
 
           <!--page login: -->
           <form method="post" id="singninFrom">
+
+            <div class="<?=  $_SESSION['class'] ?> alert  alert-dismissible fade show col-6 mx-auto mb-5 text-center fw-bold shadow" role="alert">
+              <span><?=  $_SESSION['message'] ?></span>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            
             <div class="form-group">
               <label class="font-weight-bold">Email : <span class="text-danger">*</span></label>
               <input type="email" name="email" id="email" class="form-control" placeholder="Entrer email connexion" required>
