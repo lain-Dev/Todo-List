@@ -27,7 +27,18 @@
                 $Confirmation_Pass_Err = "Veuillez confirmer votre mot de passe.";
                 $class_alert = "alert-danger";
             }
+            
         }
+        error_log(date('l jS \of F Y h:i:s A') . ":  Tous les champs sont remplis!\r\n", 3, '../log.txt');
+
+        //verifier doublon email
+        
+        function doublonEmail () {
+            $emailVerifier = "SELECT * FROM user FROM email";
+            $resultat = mysql_query($emailVerifier);
+        }
+        
+
 
         // verifier si le mot de passe et sa confirmation correspond
         if ($_POST["passwordSignup"] != $_POST["password2"]) {
@@ -36,6 +47,7 @@
             $Confirmation_Pass_Err = "Les mots de passes sont différents.";
             $class_alert = "alert-danger";
         }
+        error_log(date('l jS \of F Y h:i:s A') . ":  Mot de passe Identique!\r\n", 3, '../log.txt');
 
 
 
