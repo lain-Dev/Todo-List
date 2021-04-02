@@ -21,9 +21,9 @@
                  <?php if ($_SESSION["user"] == false) { ?>
                     <h3 class="text-white border-bottom">Bienvenue</h3>
                 <!-- Si 'user' est connecté, on affiche ce qui suit -->
-                <?php } else if ($_SESSION["user"]['role'] == 1) { ?>
+                <?php } else if ($_SESSION['role'] == 1 && $_SESSION["user"] == true) { ?>
                     <li>
-                        <form action="" method="POST">
+                        <form action="../controller/logout.php" method="POST">
                             <button class="btn btn-primary btn-green-nav" type="submit" name="deconnexion">Déconnexion</button>
                         </form>
                     </li>
@@ -54,11 +54,11 @@
     <?php require_once(dirname(__DIR__).'/vue/frontend/login.php');?>
 <!-- Si 'user' est connecté, on affiche ce qui suit -->
 <?php } 
-else if ($_SESSION['role'] == 1) { ?>
+else if ($_SESSION['role'] == 1 && $_SESSION["user"] == true) { ?>
      <?php require_once(dirname(__DIR__).'/vue/frontend/todoList.php');?>       
 <!-- Si admin est connecté, on affiche ce qui suit -->
 <?php } 
-else if ($_SESSION['role'] == 2) { ?>
+else if ($_SESSION['role'] == 2 && $_SESSION["user"] == true) { ?>
     <?php require_once(dirname(__DIR__).'/vue/admin/admin.php');?>     
 <?php } ?>
 
