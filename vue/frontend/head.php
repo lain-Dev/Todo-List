@@ -5,6 +5,9 @@ session_start();
 if(!isset($_SESSION['user'])){
     $_SESSION['user'] = false;
 }
+if(!isset($_SESSION['role_user'])){
+    $_SESSION['role_user'] = false;
+}
 
 ?>
 
