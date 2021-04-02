@@ -34,8 +34,19 @@
         </div>
         </nav>
 
+        <?php include '../controller/inscription.php'; ?>
 
+        <div class="container mt-5 w-50 text-center">
+        <?php if(isset($_SESSION['flash'])):?>
+          <?php if($_SESSION['flash'][0] == "Success"):?>
+          <div class="alert alert-success" id="success"><?= $_SESSION['flash'][1] ?></div>
+          <?php else:?>
+          <div class="alert alert-danger" id="error"><?= $_SESSION['flash'][2] ?></div>
+          <?php endif;?>
+          <?php endif;?>
+        </div>
 
+        
 
 <!-- Si aucun utilisateur n'est connecté, on affiche ce qui suit -->
 <?php if ($_SESSION["user"] == false) { ?>

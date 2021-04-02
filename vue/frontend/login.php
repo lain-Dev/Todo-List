@@ -9,7 +9,7 @@ a {
 }
 </style>
 
-<?php include '../controller/inscription.php'; ?>
+
 
 <div class="container mt-5 mb-4">
   <div class="col-sm-8 ml-auto mr-auto">
@@ -67,7 +67,8 @@ a {
           <!--page inscription-->
           
 
-          <form method="post" enctype="multipart/form-data">
+
+          <form method="post" enctype="multipart/form-data" id="singnupFrom">
 
             <div class="form-group">
               <label class="font-weight-bold">Email <span class="text-danger">*</span></label>
