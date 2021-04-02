@@ -16,18 +16,16 @@ if (isset($_POST['login'])) {
 
     // On vérifie si le password du $_POST correspond au password dans la BDD
     $password = $_POST["password"];
-    if ($resultat["passwordSignup"] != $password) { // Si un des deux input ne correspond pas, on renvoi un message d'erreur
+    if (password_verify($password, $resultat['passwordSignup'])) { 
+        // Si le password correspond on lance la session user
+        $_SESSION['role'] = $resultat[0]->role_user;
+        $_SESSION['id_utilisateur'] = $resultat[0]->id;
+        error_log(date('l jS \of F Y h:i:s A') . ": Identifiants corrects, connexion réussie\r\n", 3, '../log.txt');
+        header('Location: ../vue/home.php'); // Redirection vers la page d'accueil
+        die;
+    } else {
+        // Sinon
         $_SESSION['flash'] = array('Error', "Echec lors de la connexion au compte","Erreur dans le formulaire </br> Votre email ou votre mot de passe incorrecte !");
         error_log(date('l jS \of F Y h:i:s A') . ": Mot de passe incorrect, échec de la connexion\r\n", 3, '../log.txt');
-    } else {
-        // Si le password correspond on lance la session user
-        $_SESSION['user'] = true;
-        error_log(date('l jS \of F Y h:i:s A') . ": Identifiants corrects, connexion réussie\r\n", 3, '../log.txt');
-        header('Location: ../index.php'); // Redirection vers la page d'accueil
-        die;
         }
 }
-
-
-
-    

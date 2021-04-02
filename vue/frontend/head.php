@@ -6,9 +6,11 @@ if(!isset($_SESSION['user'])){
     $_SESSION['user'] = false;
 }
 if(!isset($_SESSION['role_user'])){
-    $_SESSION['role_user'] = false;
+    $_SESSION['role'] = false;
 }
-
+if(!isset($_SESSION['id_utilisateur'])){
+    $_SESSION['id_utilisateur'] = false;
+}
 ?>
 
 <!DOCTYPE html>

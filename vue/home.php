@@ -54,11 +54,11 @@
     <?php require_once(dirname(__DIR__).'/vue/frontend/login.php');?>
 <!-- Si 'user' est connecté, on affiche ce qui suit -->
 <?php } 
-else if ($_SESSION["user"]['role_user'] == 1) { ?>
+else if ($_SESSION['role'] == 1) { ?>
      <?php require_once(dirname(__DIR__).'/vue/frontend/todoList.php');?>       
 <!-- Si admin est connecté, on affiche ce qui suit -->
 <?php } 
-else if ($_SESSION['user']['role_user'] == 2) { ?>
+else if ($_SESSION['role'] == 2) { ?>
     <?php require_once(dirname(__DIR__).'/vue/admin/admin.php');?>     
 <?php } ?>
 
