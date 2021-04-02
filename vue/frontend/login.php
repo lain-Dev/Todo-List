@@ -34,19 +34,14 @@ a {
 
           <!--page login: -->
           <form method="post" id="singninFrom">
-
-            <div class="<?=  $_SESSION['class'] ?> alert  alert-dismissible fade show col-6 mx-auto mb-5 text-center fw-bold shadow" role="alert">
-              <span><?=  $_SESSION['message'] ?></span>
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
             
             <div class="form-group">
               <label class="font-weight-bold">Email : <span class="text-danger">*</span></label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Entrer email connexion" required>
+              <input type="email" name="email" id="email" class="form-control" placeholder="Entrer email connexion" required value="<?php if (isset($_POST['email'])) {echo htmlspecialchars($_POST['email'], ENT_QUOTES);} ?>>
             </div>
             <div class="form-group">
               <label class="font-weight-bold">Mot Passe : <span class="text-danger">*</span></label>
-              <input type="password" name="password" id="password" class="form-control" placeholder="***********" required>
+              <input type="password" name="password" id="password" class="form-control" placeholder="***********" required value="<?php if (isset($_POST['password'])) {echo htmlspecialchars($_POST['password'], ENT_QUOTES);} ?>>
             </div>
             <!-- <div class="form-group">
               <div class="row">
@@ -74,20 +69,13 @@ a {
 
           <form method="post" enctype="multipart/form-data">
 
-            <div class="<?=  $_SESSION['class'] ?> alert  alert-dismissible fade show col-6 mx-auto mb-5 text-center fw-bold shadow" role="alert">
-              <span><?=  $_SESSION['message'] ?></span>
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-
             <div class="form-group">
               <label class="font-weight-bold">Email <span class="text-danger">*</span></label>
-              <input type="email" name="email" id="emil" class="form-control" placeholder="Entrer email valide" required>
-              <span class="<?= $class_alert ?>"><?= $Email_Err ?></span>
+              <input type="email" name="email" id="email" class="form-control" placeholder="Entrer email valide" required value="<?php if (isset($_POST['email'])) {echo htmlspecialchars($_POST['email'], ENT_QUOTES);} ?>">
             </div>
             <div class="form-group">
               <label class="font-weight-bold">Nom <span class="text-danger">*</span></label>
-              <input type="text" name="nom" id="nom" class="form-control" placeholder="Choisissez nom utilisateur" required>
-              <span class="<?= $class_alert ?>"><?= $Nom_Err ?></span>
+              <input type="text" name="nom" id="nom" class="form-control" placeholder="Choisissez nom utilisateur" required value="<?php if (isset($_POST['nom'])) {echo htmlspecialchars($_POST['nom'], ENT_QUOTES);} ?>">
               <div class="text-danger"><em>Ce sera votre nom de connexion!</em></div>
             </div>
             <!-- <div class="form-group">
@@ -96,13 +84,11 @@ a {
             </div> -->
             <div class="form-group">
               <label class="font-weight-bold">Mot de passe: <span class="text-danger">*</span></label>
-              <input type="password" name="passwordSignup" id="passwordSignup" class="form-control" placeholder="***********" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimum 6 charactères pour mot passe !' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
-              <span class="<?= $class_alert ?>"><?= $Password_Err ?></span>
+              <input type="password" name="passwordSignup" id="passwordSignup" class="form-control" placeholder="***********" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimum 6 charactères pour mot passe !' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required value="<?php if (isset($_POST['passwordSignup'])) {echo htmlspecialchars($_POST['passwordSignup'], ENT_QUOTES);} ?>">
             </div>
             <div class="form-group">
               <label class="font-weight-bold">Confirmer mot passe: <span class="text-danger">*</span></label>
-              <input type="password" name="password2" id="password2" class="form-control" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? ' Entrer le même mot passe précédent' : '');" placeholder="***********" required>
-              <span class="<?= $class_alert ?>"><?= $Confirmation_Pass_Err ?></span>
+              <input type="password" name="password2" id="password2" class="form-control" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? ' Entrer le même mot passe précédent' : '');" placeholder="***********" required value="<?php if (isset($_POST['password2'])) {echo htmlspecialchars($_POST['password2'], ENT_QUOTES);} ?>>
             </div>
             <!-- <div class="form-group">
               <label><input type="checkbox" name="signupcondition" id="signupcondition" required> I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</label>

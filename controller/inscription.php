@@ -1,7 +1,5 @@
 <?php
 
-    $_SESSION['class'] = "d-none";
-    $_SESSION['message'] = "";
     $Nom_Err =  $Email_Err =  $Password_Err = $Confirmation_Pass_Err = "";
     // On vérifie si le serveur reçoit un POST et si on a cliqué sur le bouton de signup
     if (isset($_POST['signup'])) {
@@ -18,11 +16,8 @@
         foreach ($requiredInput as $input) {
             if (empty($input)) { // Si un champ est vide, le compteur d'erreur augmente
                 $count_crea++;
-                $Nom_Err = "Veuillez entrer un nom.";
-                $Email_Err = "Veuillez entrer un email.";
-                $Password_Err = "Veuillez entrer un mot de passe";
-                $Confirmation_Pass_Err = "Veuillez confirmer votre mot de passe.";
-                $class_alert = "alert-danger";
+                error_log(date('l jS \of F Y h:i:s A') . ":  Un champs est vide!\r\n", 3, '../log.txt');
+                //session flash error:
             }
             
         }
@@ -42,8 +37,7 @@
                     if($value->email == $email){
                         $count_crea++;
                         error_log(date('l jS \of F Y h:i:s A') . ":  email existe déjà !\r\n", 3, '../log.txt');
-                        $Email_Err = "email existe déjà !";
-                        $class_alert = "alert-danger";
+                        //session flash error:
                         exit();
                     }else {
                         error_log(date('l jS \of F Y h:i:s A') . ":  email valide !\r\n", 3, '../log.txt');
@@ -60,9 +54,7 @@
         // verifier si le mot de passe et sa confirmation correspond
         if ($_POST["passwordSignup"] != $_POST["password2"]) {
             $count_crea++;
-            $Password_Err = "Les mots de passes sont différents.";
-            $Confirmation_Pass_Err = "Les mots de passes sont différents.";
-            $class_alert = "alert-danger";
+            //session flash error:
             error_log(date('l jS \of F Y h:i:s A') . ":  Mot de passe n'est pas Identique!\r\n", 3, '../log.txt');
         }
         error_log(date('l jS \of F Y h:i:s A') . ":  Mot de passe Identique!\r\n", 3, '../log.txt');
