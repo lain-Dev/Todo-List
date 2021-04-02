@@ -88,7 +88,7 @@ a {
             </div>
             <div class="form-group">
               <label class="font-weight-bold">Confirmer mot passe: <span class="text-danger">*</span></label>
-              <input type="password" name="password2" id="password2" class="form-control" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? ' Entrer le même mot passe précédent' : '');" placeholder="***********" required value="<?php if (isset($_POST['password2'])) {echo htmlspecialchars($_POST['password2'], ENT_QUOTES);} ?>>
+              <input type="password" name="password2" id="password2" class="form-control" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? ' Entrer le même mot passe précédent' : '');" placeholder="***********" required value="<?php if (isset($_POST['password2'])) {echo htmlspecialchars($_POST['password2'], ENT_QUOTES);} ?>">
             </div>
             <!-- <div class="form-group">
               <label><input type="checkbox" name="signupcondition" id="signupcondition" required> I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</label>
