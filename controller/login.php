@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
     $password = $_POST["password"];
     if (password_verify($password, $resultat['passwordSignup'])) { 
         // Si le password correspond on lance la session user
-        $_SESSION['user'] = true;
+        $_SESSION['user'] = 1;
         $_SESSION['role'] = $resultat['role_user'];
         $_SESSION['id_utilisateur'] = $resultat['id'];
         error_log(date('l jS \of F Y h:i:s A') . ": Identifiants corrects, connexion réussie\r\n", 3, '../log.txt');
