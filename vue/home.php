@@ -7,31 +7,32 @@
     
     <body>
     
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
-        <a class="navbar-brand text-warning" href="#">
-            <h1>Todo-List</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-    
-                 <!-- Si aucun utilisateur n'est connecté, on affiche ce qui suit -->
-                 <?php if ($_SESSION["user"] == false) { ?>
-                    <h3 class="text-white border-bottom">Bienvenue</h3>
-                <!-- Si 'user' est connecté, on affiche ce qui suit -->
-                <?php } else if ($_SESSION['role'] == 1 && $_SESSION["user"] == true) { ?>
-                    <li>
-                        <form action="../controller/logout.php" method="POST">
-                            <button class="btn btn-primary btn-green-nav" type="submit" name="deconnexion">Déconnexion</button>
-                        </form>
-                    </li>
-                <?php }?>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand text-warning" href="#">
+                <h1>Todo-List</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                <div class="d-flex navbarClass justify-content-end align-items-center w-100">
+                    <ul class="navbar-nav">
             
-    
-            </ul>
-        </div>
+                        <!-- Si aucun utilisateur n'est connecté, on affiche ce qui suit -->
+                        <?php if ($_SESSION["user"] == false) { ?>
+                            <h3 class="text-white border-bottom">Bienvenue</h3>
+                        <!-- Si 'user' est connecté, on affiche ce qui suit -->
+                        <?php } else if ($_SESSION['role'] == 1 && $_SESSION["user"] == true) { ?>
+                            <li>
+                                <form action="../controller/logout.php" method="POST">
+                                    <button class="btn btn-primary btn-green-nav" type="submit" name="deconnexion">Déconnexion</button>
+                                </form>
+                            </li>
+                        <?php }?>
+            
+                    </ul>
+                </div>    
+            </div>
         </nav>
 
         <?php include '../controller/inscription.php'; ?>
