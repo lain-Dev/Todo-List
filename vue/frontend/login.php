@@ -9,6 +9,8 @@ a {
 }
 </style>
 
+<?php include '../controller/inscription.php'; ?>
+
 <div class="container mt-5 mb-4">
   <div class="col-sm-8 ml-auto mr-auto">
 
@@ -68,9 +70,9 @@ a {
           <div class="text-center"><img src="https://www.flaticon.com/svg/vstatic/svg/197/197717.svg?token=exp=1617172435~hmac=3305dc5a2514c26e63842b165e52b2f1" class="rounded-circle border p-1" style="height: 80px; width: 80px;"></div>
 
           <!--page inscription-->
-          <?php include '../controller/inscription.php'; ?>
+          
 
-          <form method="post" id="singnupFrom" action="../controller/inscription.php">
+          <form method="post" enctype="multipart/form-data">
 
             <div class="<?=  $_SESSION['class'] ?> alert  alert-dismissible fade show col-6 mx-auto mb-5 text-center fw-bold shadow" role="alert">
               <span><?=  $_SESSION['message'] ?></span>

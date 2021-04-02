@@ -45,12 +45,9 @@
                         $Email_Err = "email existe déjà !";
                         $class_alert = "alert-danger";
                         exit();
+                    }else {
+                        error_log(date('l jS \of F Y h:i:s A') . ":  email valide !\r\n", 3, '../log.txt');
                     }
-                }
-
-                if(!$doublon){
-                    error_log(date('l jS \of F Y h:i:s A') . ":  email valide !\r\n", 3, '../log.txt');
-                    exit();
                 }
                 
             }catch(PDOException $e){
@@ -86,12 +83,12 @@
             $req_user->execute(array(
                 'nom' => $nom,
                 'email' => $email,
-                'passwordSignup' => $passwordsignup
+                'passwordSignup' => $passwordSignup
             ));
 
             error_log(date('l jS \of F Y h:i:s A') . ": utilisateur a été créé avec succès\r\n", 3, '../log.txt');
             //renvoi page login pour se connecter
-            header('Location:../vue/frontend/login.php');
+            header('Location:../vue/home.php');
             $_SESSION['class'] = "alert-success";
             $_SESSION['message'] = "Le compte a bien été créé";
         }
