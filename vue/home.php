@@ -22,7 +22,7 @@
                         <?php if ($_SESSION["user"] == false) { ?>
                             <h3 class="text-white border-bottom">Bienvenue</h3>
                         <!-- Si 'user' est connecté, on affiche ce qui suit -->
-                        <?php } else if ($_SESSION['role'] == 1 && $_SESSION["user"] == true) { ?>
+                        <?php } else if ($_SESSION['role'] == 1 || 2 && $_SESSION["user"] == true) { ?>
                             <li>
                                 <form action="../controller/logout.php" method="POST">
                                     <button class="btn btn-primary btn-green-nav" type="submit" name="deconnexion">Déconnexion</button>

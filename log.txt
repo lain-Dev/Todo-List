@@ -18,3 +18,16 @@ Friday 2nd of April 2021 12:10:29 PM: connexion serveur pour login !
 Friday 2nd of April 2021 12:10:30 PM: Identifiants corrects, connexion réussie
 Friday 2nd of April 2021 12:20:39 PM: connexion serveur pour login !
 Friday 2nd of April 2021 12:20:39 PM: Identifiants corrects, connexion réussie
+Friday 2nd of April 2021 12:32:46 PM: connexion serveur pour login !
+Friday 2nd of April 2021 12:32:46 PM: Identifiants corrects, connexion réussie
+Friday 2nd of April 2021 12:36:25 PM: connexion serveur pour login !
+Friday 2nd of April 2021 12:36:25 PM: Identifiants corrects, connexion réussie
+Friday 2nd of April 2021 12:38:30 PM:  Tous les champs sont remplis!
+Friday 2nd of April 2021 12:38:30 PM:  début connexion pour doublon mail OK !
+Friday 2nd of April 2021 12:38:30 PM:  email valide !
+Friday 2nd of April 2021 12:38:30 PM:  Mot de passe Identique!
+Friday 2nd of April 2021 12:38:30 PM: utilisateur a été créé avec succès
+Friday 2nd of April 2021 12:38:43 PM: connexion serveur pour login !
+Friday 2nd of April 2021 12:38:43 PM: Identifiants corrects, connexion réussie
+Friday 2nd of April 2021 12:39:35 PM: connexion serveur pour login !
+Friday 2nd of April 2021 12:39:35 PM: Identifiants corrects, connexion réussie
