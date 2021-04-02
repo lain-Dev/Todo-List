@@ -37,11 +37,11 @@ a {
             
             <div class="form-group">
               <label class="font-weight-bold">Email : <span class="text-danger">*</span></label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Entrer email connexion" required value="<?php if (isset($_POST['email'])) {echo htmlspecialchars($_POST['email'], ENT_QUOTES);} ?>>
+              <input type="email" name="email" id="email" class="form-control" placeholder="Entrer email connexion" required value="<?php if(isset($_POST['email'])){echo htmlspecialchars($_POST['email'], ENT_QUOTES);}?>">
             </div>
             <div class="form-group">
               <label class="font-weight-bold">Mot Passe : <span class="text-danger">*</span></label>
-              <input type="password" name="password" id="password" class="form-control" placeholder="***********" required value="<?php if (isset($_POST['password'])) {echo htmlspecialchars($_POST['password'], ENT_QUOTES);} ?>>
+              <input type="password" name="password" id="password" class="form-control" placeholder="***********" required value="<?php if(isset($_POST['password'])){echo htmlspecialchars($_POST['password'], ENT_QUOTES);}?>">
             </div>
             <!-- <div class="form-group">
               <div class="row">

@@ -1,0 +1,8 @@
+Friday 2nd of April 2021 06:23:56 AM:  Tous les champs sont remplis!
+Friday 2nd of April 2021 06:23:56 AM:  début connexion pour doublon mail OK !
+Friday 2nd of April 2021 06:23:56 AM:  Mot de passe Identique!
+Friday 2nd of April 2021 06:23:56 AM: utilisateur a été créé avec succès
+Friday 2nd of April 2021 06:23:56 AM: échec de la création du compte
+Friday 2nd of April 2021 06:24:43 AM: échec de la création du compte
+Friday 2nd of April 2021 06:25:39 AM: échec de la création du compte
+Friday 2nd of April 2021 06:26:34 AM: échec de la création du compte
